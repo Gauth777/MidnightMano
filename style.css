@@ -562,12 +562,13 @@ h1, h2, h3 {
 }
 
 
-/* Hide mobile stuff by default */
+/* Hides mobile menu + icon by default */
 .mobile-menu,
 .mobile-menu-icon {
   display: none;
 }
 
+/* Wraps logo + bars + cart */
 .navbar-top-row {
   display: flex;
   justify-content: space-between;
@@ -575,7 +576,7 @@ h1, h2, h3 {
   width: 100%;
 }
 
-/* Responsive design */
+/* Responsive Styles */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -590,7 +591,7 @@ h1, h2, h3 {
   }
 
   .navbar-center {
-    display: none;
+    display: none !important; /* Hide original links */
   }
 
   .mobile-menu-icon {
@@ -600,31 +601,23 @@ h1, h2, h3 {
     cursor: pointer;
   }
 
+  .mobile-menu.hidden {
+    display: none;
+  }
+
   .mobile-menu {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    background-color: #1f1f1f;
+    padding: 0.75rem 1.5rem;
+    background-color: transparent; /* <-- Fixes the box issue */
     width: 100%;
-    border-radius: 6px;
-    animation: fadeSlide 0.3s ease forwards;
   }
 
   .mobile-menu a {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-  }
-
-  @keyframes fadeSlide {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    padding: 0.4rem 0;
   }
 }
