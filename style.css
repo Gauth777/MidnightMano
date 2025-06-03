@@ -493,3 +493,64 @@ h1, h2, h3 {
 .hidden {
   display: none;
 }
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .navbar-center {
+    flex-direction: column;
+    margin: 0;
+    gap: 0.5rem;
+  }
+
+  .navbar-center a {
+    margin-right: 0;
+  }
+
+  .hero {
+    padding: 3rem 1rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text h1,
+  .typing-text {
+    font-size: 1.6rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .snack-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding-left: 0;
+  }
+
+  .snack-card {
+    width: 80%;
+    min-width: unset;
+  }
+
+  .scroll-arrow,
+  .left-arrow {
+    display: none;
+  }
+
+  .cart {
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .order-form form {
+    width: 95%;
+    padding: 1 rem;
+  }
+}
