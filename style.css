@@ -624,25 +624,67 @@ h1, h2, h3 {
 
 @media (min-width: 769px) {
   .navbar {
-    flex-direction: row;
+    background-color: #191919;
+    color: #fff;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
   }
 
-  .navbar-left {
-    display: flex;
-    align-items: center;
+  .navbar h1 {
+    font-size: 1.8rem;
   }
 
   .navbar-center {
     display: flex !important;
     gap: 1.5rem;
+    margin-right: 100px;
+  }
+
+  .navbar-center a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
     margin-right: 40px;
+  }
+
+  .navbar-center a:hover {
+    color: #f0c040;
+  }
+
+  .navbar-right {
+    position: relative;
+    margin-top: 0; /* override mobile spacing */
+  }
+
+  .navbar-right i {
+    font-size: 1.6rem;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .navbar-right i:hover {
+    color: #f0c040;
   }
 
   .mobile-menu,
   .mobile-menu-icon {
     display: none !important;
+  }
+
+  .navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
   }
 }
