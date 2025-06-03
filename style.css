@@ -626,7 +626,7 @@ h1, h2, h3 {
   @media (min-width: 769px) {
   .navbar {
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
     background-color: #191919;
     color: #fff;
