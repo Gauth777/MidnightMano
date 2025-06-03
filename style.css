@@ -621,3 +621,28 @@ h1, h2, h3 {
     padding: 0.4rem 0;
   }
 }
+
+@media (min-width: 769px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-center {
+    display: flex !important;
+    gap: 1.5rem;
+    margin-right: 100px;
+  }
+
+  .mobile-menu,
+  .mobile-menu-icon {
+    display: none !important;
+  }
+}
