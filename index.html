@@ -20,25 +20,23 @@
 
   <!-- Navbar -->
   <nav class="navbar">
-    <div class="navbar-top-row">
-      <div class="navbar-left">
-        <h1 class="gradient-text">MidnightMano</h1>
-      </div>
-
-      <div class="navbar-right mobile-cart">
-        <a href="cart.html">
-          <i class="uil uil-shopping-cart">
-            <span id="cart-count" class="cart-count">0</span>
-          </i>
-        </a>
-        <i class="uil uil-bars mobile-menu-icon" onclick="toggleMobileMenu()"></i>
-      </div>
+    <div class="navbar-left">
+      <i class="uil uil-bars mobile-menu-icon" onclick="toggleMobileMenu()"></i>
+      <h1 class="gradient-text">MidnightMano</h1>
     </div>
 
     <div class="navbar-center" id="desktop-nav">
       <a href="#">Home</a>
       <a href="#menu">Products</a>
       <a href="#">Combos</a>
+    </div>
+
+    <div class="navbar-right">
+      <a href="cart.html">
+        <i class="uil uil-shopping-cart">
+          <span id="cart-count" class="cart-count">0</span>
+        </i>
+      </a>
     </div>
 
     <div class="mobile-menu hidden" id="mobileMenu">
