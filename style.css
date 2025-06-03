@@ -596,7 +596,8 @@ h1, h2, h3 {
 
   .navbar-right {
     display: flex;
-    
+    justify-content: flex-end;
+    padding-bottom: 1rem;
   }
 
   .mobile-menu-icon {
