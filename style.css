@@ -498,18 +498,24 @@ h1, h2, h3 {
   .navbar {
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
     padding: 1rem;
   }
 
   .navbar-center {
-    flex-direction: column;
-    margin: 0;
-    gap: 0.5rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
   }
 
   .navbar-center a {
-    margin-right: 0;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  .navbar-right {
+    margin-top: 0.5rem;
   }
 
   .hero {
@@ -551,6 +557,6 @@ h1, h2, h3 {
 
   .order-form form {
     width: 95%;
-    padding: 1 rem;
+    padding: 1rem;
   }
 }
