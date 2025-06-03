@@ -663,11 +663,12 @@ h1, h2, h3 {
   }
 
   .navbar-right {
-    justify-self: end;
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
 
   .navbar-right i {
     font-size: 1.6rem;
