@@ -579,6 +579,7 @@ h1, h2, h3 {
 /* Responsive Styles */
 @media (max-width: 768px) {
   .navbar {
+    display: flex;
     flex-direction: column;
     align-items: stretch;
   }
@@ -591,7 +592,14 @@ h1, h2, h3 {
   }
 
   .navbar-center {
-    display: none !important; /* Hide original links */
+    display: none !important;
+  }
+
+  .navbar-right {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 1rem;
+    margin-top: 0.5rem;
   }
 
   .mobile-menu-icon {
@@ -610,7 +618,7 @@ h1, h2, h3 {
     flex-direction: column;
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
-    background-color: transparent; /* <-- Fixes the box issue */
+    background-color: transparent;
     width: 100%;
   }
 
@@ -621,6 +629,7 @@ h1, h2, h3 {
     padding: 0.4rem 0;
   }
 }
+
 
 @media (min-width: 769px) {
   @media (min-width: 769px) {
