@@ -638,7 +638,7 @@ h1, h2, h3 {
   .navbar-center {
     display: flex !important;
     gap: 1.5rem;
-    margin-right: 100px;
+    
   }
 
   .mobile-menu,
