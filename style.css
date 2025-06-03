@@ -588,7 +588,7 @@ h1, h2, h3 {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    padding-left: 1rem;
+    padding-left: 0.5rem;
   }
 
   .navbar-center {
@@ -599,7 +599,7 @@ h1, h2, h3 {
     display: flex;
     justify-content: flex-end;
     padding: 0 1rem;
-    margin-top: 0.5rem;
+    
   }
 
   .mobile-menu-icon {
