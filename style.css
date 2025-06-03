@@ -561,7 +561,8 @@ h1, h2, h3 {
   }
 }
 
-/* Default hidden elements */
+
+/* Hide mobile stuff by default */
 .mobile-menu,
 .mobile-menu-icon {
   display: none;
@@ -574,7 +575,7 @@ h1, h2, h3 {
   width: 100%;
 }
 
-/* Mobile Styles */
+/* Responsive design */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
