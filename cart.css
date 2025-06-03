@@ -1,0 +1,74 @@
+/* Optional: Reset if needed */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: #fdfdfd;
+  padding: 1rem;
+}
+
+.cart-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.cart-container h1 {
+  text-align: center;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1rem;
+}
+
+.cart-item-info {
+  flex: 1;
+}
+
+.cart-item button {
+  background-color: crimson;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cart-summary {
+  text-align: right;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+.cart-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.btn {
+  background-color: #2d87f0;
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.empty-message {
+  text-align: center;
+  margin-top: 3rem;
+  color: #888;
+  font-size: 1.1rem;
+}

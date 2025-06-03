@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+  <title>MidnightMano</title>
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!--  <div id="splash-screen">
+  <video autoplay muted playsinline id="splash-video">
+    <source src="Welcome.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
+-->
+
+  <!-- Navbar -->
+  <nav class="navbar">
+  <div class="navbar-left">
+    <h1 class="gradient-text">MidnightMano</h1>
+  </div>
+
+  <div class="navbar-center">
+    <a href="#">Home</a>
+    <a href="#menu">Products</a>
+    <a href="#">Combos</a>
+  </div>
+
+  <div class="navbar-right">
+    <a href="cart.html">
+    <i class="uil uil-shopping-cart">
+    <span id="cart-count" class="cart-count">0</span>
+  </i>
+  </a>
+  </div>
+</nav>
+
+  <!-- Hero Section -->
+<section class="hero">
+  <div class="hero-text">
+    <h1 class="gradient-text">ᗯEᒪᑕOᗰE TO ᗰIᗪᑎIGᕼT ᗰᗩᑎO</h1>
+    <h1 class="typing-text">Delicious Snacks<br>Delivered Fast</h1>
+    <p class="shimmer-text">Discover a wide range of delicious snacks and refreshing drinks at MidnightMano Food Store.</p>
+    <a href="#menu" class="hero-btn" id="browseBtn">Browse Menu <span class="ping">!</span> </a>
+  </div>
+</section>
+
+
+  <!-- Snacks Section -->
+  <section class="snack-menu" id= "menu">
+    <h2>Menu</h2>
+    <div class="snack-grid">
+      <!-- Sample Snack Card -->
+      <div class="snack-card">
+        <img src="maggie.png" alt="Maggie">
+        <h3>Maggie</h3>
+        <p>₹20</p>
+        <button onclick="addToCart('Maggie', 20)">Add to Cart</button>
+      </div>
+      <div class="snack-card">
+        <img src="chips.png" alt="Chips">
+        <h3>Lays</h3>
+        <p>₹25</p>
+        <button onclick="addToCart('Chips', 25)">Add to Cart</button>
+      </div>
+      <div class="snack-card">
+        <img src="Oreo.png" alt="oreo">
+        <h3>Oreo</h3>
+        <p>₹15</p>
+        <button onclick="addToCart('Oreo', 15)">Add to Cart</button>
+      </div>
+      <div class="snack-card">
+        <img src="jimjam.png" alt="jimjam">
+        <h3>JimJam</h3>
+        <p>₹15</p>
+        <button onclick="addToCart('JimJam', 15)">Add to Cart</button>
+      </div>
+      <div class="snack-card">
+        <img src="kurkure.png" alt="Kurkure">
+        <h3>Kurkure Masala Munch</h3>
+        <p>₹25</p>
+        <button onclick="addToCart('Kurkure Masala Munch', 25)">Add to Cart</button>
+      </div>
+      <div class="snack-card">
+        <img src="aloobhujia.png" alt="aloobhujia">
+        <h3>Aloo Bhujia</h3>
+        <p>₹100</p>
+        <button onclick="addToCart('Aloo Bhujia', 100)">Add to Cart</button>
+      </div>
+      <div class="snack-card">
+        <img src="bourbon.png" alt="bourbon">
+        <h3>Bourbon</h3>
+        <p>₹45</p>
+        <button onclick="addToCart('Bourbon', 45)">Add to Cart</button>
+      </div>
+      <div class="snack-card">
+        <img src="hideandseek.png" alt="hideandseek">
+        <h3>HideandSeek</h3>
+        <p>₹45</p>
+        <button onclick="addToCart('HideandSeek', 45)">Add to Cart</button>
+      </div>
+
+      <!-- Add more snacks here -->
+    </div>
+
+    <div class="scroll-arrow" onclick="scrollSnacks()">
+        →
+        <span class="tooltip">Browse ahead!</span>
+      </div>
+      <div class="scroll-arrow left-arrow" onclick="scrollSnacksLeft()">
+        ←
+        <span class="tooltip">Back</span>
+      </div>
+
+
+
+  </section>
+
+  <!-- Cart Button -->
+  <div class="cart">
+    <button onclick="openOrderForm()">Place Order</button>
+  </div>
+
+  <!-- Order Form -->
+  <div id="orderForm" class="order-form hidden">
+    <h2>Place Your Order</h2>
+    <form id="snackOrderForm">
+      <label>Name:</label><input type="text" id="name" required />
+      <label>Room No:</label><input type="text" id="room" required />
+      <label>Snacks:</label><textarea id="snackList" readonly></textarea>
+      <button type="submit">Submit Order</button>
+      <button type="button" onclick="closeOrderForm()">Cancel</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
