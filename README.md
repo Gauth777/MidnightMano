@@ -21,4 +21,42 @@ Built with **HTML**, **CSS**, and **JavaScript**, this project showcases UI desi
 - CSS3
 - Vanilla JavaScript
 
+## 📂 Folder Structure
+📦 MidnightMano
+├── index.html # Homepage
+├── cart.html # Cart page
+├── style.css # Main styles
+├── cart.css # Cart page styles
+├── script.js # JS logic (to be expanded)
+├── images/ # Product images
+└── Welcome.mp4 # Animated landing video
+
+
+## 🧠 What I Learned
+
+- Structuring responsive HTML/CSS layouts
+- Handling image assets and media
+- Planning UI for a shopping/cart system
+- Preparing for JavaScript DOM interactivity
+
+## 🤝 Future Plans
+
+- 🧮 Add JavaScript cart logic
+- 🛍️ Build an order confirmation flow
+- 💬 Add user interaction (alerts, modals)
+- 🚚 Explore Firebase for order storage
+
+
+
+---
+
+### 🧑‍💻 Author
+
+Made with midnight magic by  
+[Gautham (a.k.a. Naman)](https://github.com/Gauth777) ✨
+
+---
+
+
+
 
