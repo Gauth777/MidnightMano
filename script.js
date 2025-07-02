@@ -89,3 +89,50 @@ function toggleMobileMenu() {
   const menu = document.getElementById("mobileMenu");
   menu.classList.toggle("hidden");
 }
+
+const availableSnacks = [
+  { name: 'Maggie', price: 20 },
+  { name: 'Chips', price: 25 },
+  { name: 'Oreo', price: 15 },
+  { name: 'JimJam', price: 15 },
+  { name: 'Kurkure Masala Munch', price: 25 },
+  { name: 'Aloo Bhujia', price: 100 },
+  { name: 'Bourbon', price: 45 },
+  { name: 'HideandSeek', price: 45 },
+];
+
+const comboGrid = document.querySelector('.combo-grid');
+const comboBtn = document.getElementById('create-combo-btn');
+let selectedSnacks = [];
+
+availableSnacks.forEach((snack, index) => {
+  const div = document.createElement('div');
+  div.className = 'combo-item';
+  div.innerText = `${snack.name} - ₹${snack.price}`;
+  div.addEventListener('click', () => toggleSelect(snack, div));
+  comboGrid.appendChild(div);
+});
+
+function toggleSelect(snack, element) {
+  const index = selectedSnacks.findIndex(s => s.name === snack.name);
+  if (index > -1) {
+    selectedSnacks.splice(index, 1);
+    element.classList.remove('selected');
+  } else if (selectedSnacks.length < 3) {
+    selectedSnacks.push(snack);
+    element.classList.add('selected');
+  }
+  comboBtn.disabled = selectedSnacks.length !== 3;
+}
+
+comboBtn.addEventListener('click', () => {
+  const total = selectedSnacks.reduce((sum, s) => sum + s.price, 0);
+  const discounted = Math.round(total * 0.85); // 15% off
+  const comboName = selectedSnacks.map(s => s.name).join(', ');
+  addToCart(`Combo: ${comboName}`, discounted);
+  alert(`Combo added to cart for ₹${discounted}!`);
+  // Reset
+  document.querySelectorAll('.combo-item').forEach(el => el.classList.remove('selected'));
+  selectedSnacks = [];
+  comboBtn.disabled = true;
+});

@@ -431,6 +431,51 @@ h1, h2, h3 {
   font-weight: bold;
 }
 
+.combo-builder {
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  text-align: center;
+  border-radius: 10px;
+  margin: 2rem auto;
+}
+
+.combo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.combo-item {
+  background-color: #2d2d2d;
+  padding: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.2s;
+}
+
+.combo-item.selected {
+  border-color: #28a745;
+  background-color: #3a3a3a;
+}
+
+#create-combo-btn {
+  padding: 0.8rem 1.5rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+#create-combo-btn:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+
 /* Order Form Modal */
 .order-form {
   position: fixed;
@@ -562,6 +607,8 @@ h1, h2, h3 {
 }
 
 
+
+
 /* Hides mobile menu + icon by default */
 .mobile-menu,
 .mobile-menu-icon {
@@ -597,7 +644,7 @@ h1, h2, h3 {
   .navbar-right {
     display: flex;
     justify-content: flex-end;
-    
+
   }
 
   .mobile-menu-icon {
