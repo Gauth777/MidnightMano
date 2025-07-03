@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const typedText = document.querySelector(".typing-text");
   setTimeout(() => {
     typedText.style.borderRight = "none";
-  }, 3000); // Match your typing duration
+  }, 3000); 
 });
 
 
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   container.addEventListener('scroll', updateArrowVisibility);
 
-  // Check on initial load too
+  // Check on initial load too 1
   updateArrowVisibility();
 });
 
@@ -131,7 +131,7 @@ comboBtn.addEventListener('click', () => {
   const comboName = selectedSnacks.map(s => s.name).join(', ');
   addToCart(`Combo: ${comboName}`, discounted);
   alert(`Combo added to cart for ₹${discounted}!`);
-  // Reset
+
   document.querySelectorAll('.combo-item').forEach(el => el.classList.remove('selected'));
   selectedSnacks = [];
   comboBtn.disabled = true;
