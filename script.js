@@ -15,12 +15,31 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const navbarHeight = document.querySelector(".navbar").offsetHeight;
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        e.preventDefault();
+        const offsetTop = target.getBoundingClientRect().top + window.scrollY - navbarHeight - 10;
+        window.scrollTo({
+          top: offsetTop,
+          behavior: "smooth"
+        });
+      }
+    });
+  });
+});
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const typedText = document.querySelector(".typing-text");
   setTimeout(() => {
     typedText.style.borderRight = "none";
-  }, 3000); 
+  }, 3000);
 });
 
 
