@@ -1,40 +1,36 @@
+// ---- Smooth Scroll to Menu ----
 document.addEventListener("DOMContentLoaded", () => {
   const browseBtn = document.getElementById("browseBtn");
   const menuSection = document.getElementById("menu");
 
-  browseBtn.addEventListener("click", function (e) {
-    e.preventDefault(); // prevent default anchor jump
-
+  browseBtn?.addEventListener("click", function (e) {
+    e.preventDefault();
     const navbarHeight = document.querySelector(".navbar").offsetHeight;
     const menuTop = menuSection.getBoundingClientRect().top + window.scrollY;
 
     window.scrollTo({
-      top: menuTop - navbarHeight - 20, // adjust -20 for extra gap
+      top: menuTop - navbarHeight - 20,
       behavior: "smooth",
     });
   });
 });
 
+// ---- Anchor Scroll Adjust for Navbar ----
 document.addEventListener("DOMContentLoaded", () => {
   const navbarHeight = document.querySelector(".navbar").offsetHeight;
-
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function (e) {
       const target = document.querySelector(this.getAttribute("href"));
       if (target) {
         e.preventDefault();
         const offsetTop = target.getBoundingClientRect().top + window.scrollY - navbarHeight - 10;
-        window.scrollTo({
-          top: offsetTop,
-          behavior: "smooth"
-        });
+        window.scrollTo({ top: offsetTop, behavior: "smooth" });
       }
     });
   });
 });
 
-
-
+// ---- Typing Text Border Removal ----
 document.addEventListener("DOMContentLoaded", () => {
   const typedText = document.querySelector(".typing-text");
   setTimeout(() => {
@@ -42,8 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 3000);
 });
 
-
-// Save item to localStorage
+// ---- LocalStorage Cart Handling ----
 function addToCart(name, price) {
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
   const index = cart.findIndex(item => item.name === name);
@@ -59,56 +54,86 @@ function addToCart(name, price) {
 function updateCartCount() {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
   const count = cart.reduce((sum, item) => sum + item.quantity, 0);
-  document.getElementById('cart-count').textContent = count;
+  const cartCount = document.getElementById('cart-count');
+  if (cartCount) cartCount.textContent = count;
 }
 
-// Automatically update count on page load
+// ---- Auto Update Cart Count on Load ----
 document.addEventListener('DOMContentLoaded', () => {
   updateCartCount();
 });
 
-/*
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    const splash = document.getElementById("splash-screen");
-    splash.style.display = "none";
-  }, 2500); // 2.5 seconds
+// ---- Quantity Counter on Cards ----
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".snack-card");
+
+  cards.forEach(card => {
+    const incrementBtn = card.querySelector(".increment");
+    const decrementBtn = card.querySelector(".decrement");
+    const qtyDisplay = card.querySelector(".qty-display");
+    const addToCartBtn = card.querySelector(".add-to-cart-btn");
+
+    let qty = 0;
+
+    incrementBtn?.addEventListener("click", () => {
+      qty++;
+      qtyDisplay.textContent = qty;
+    });
+
+    decrementBtn?.addEventListener("click", () => {
+      if (qty > 0) {
+        qty--;
+        qtyDisplay.textContent = qty;
+      }
+    });
+
+    addToCartBtn?.addEventListener("click", () => {
+      if (qty === 0) return;
+      const item = card.getAttribute("data-item");
+      const price = parseInt(card.getAttribute("data-price"));
+      for (let i = 0; i < qty; i++) {
+        addToCart(item, price);
+      }
+      qty = 0;
+      qtyDisplay.textContent = "0";
+    });
+  });
 });
-*/
 
-function scrollSnacks() {
-  const container = document.querySelector('.snack-grid');
-  container.scrollBy({ left: 300, behavior: 'smooth' });
+// ---- Mobile Menu Toggle ----
+function toggleMobileMenu() {
+  const menu = document.getElementById("mobileMenu");
+  menu?.classList.toggle("hidden");
 }
 
-function scrollSnacksLeft() {
-  const container = document.querySelector('.snack-grid');
-  container.scrollBy({ left: -300, behavior: 'smooth' });
-}
-
+// ---- Snack Grid Scroll Arrows ----
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.snack-grid');
   const leftArrow = document.querySelector('.left-arrow');
   const rightArrow = document.querySelector('.scroll-arrow:not(.left-arrow)');
 
   function updateArrowVisibility() {
+    if (!container || !leftArrow || !rightArrow) return;
     leftArrow.style.display = container.scrollLeft > 0 ? 'flex' : 'none';
-
     const scrollEnd = container.scrollWidth - container.clientWidth;
     rightArrow.style.display = container.scrollLeft >= scrollEnd - 1 ? 'none' : 'flex';
   }
 
-  container.addEventListener('scroll', updateArrowVisibility);
-
-  // Check on initial load too 1
+  container?.addEventListener('scroll', updateArrowVisibility);
   updateArrowVisibility();
 });
 
-function toggleMobileMenu() {
-  const menu = document.getElementById("mobileMenu");
-  menu.classList.toggle("hidden");
+function scrollSnacks() {
+  const container = document.querySelector('.snack-grid');
+  container?.scrollBy({ left: 300, behavior: 'smooth' });
 }
 
+function scrollSnacksLeft() {
+  const container = document.querySelector('.snack-grid');
+  container?.scrollBy({ left: -300, behavior: 'smooth' });
+}
+
+// ---- Combo Builder Logic ----
 const availableSnacks = [
   { name: 'Maggie', price: 20 },
   { name: 'Chips', price: 25 },
@@ -124,12 +149,12 @@ const comboGrid = document.querySelector('.combo-grid');
 const comboBtn = document.getElementById('create-combo-btn');
 let selectedSnacks = [];
 
-availableSnacks.forEach((snack, index) => {
+availableSnacks.forEach((snack) => {
   const div = document.createElement('div');
   div.className = 'combo-item';
   div.innerText = `${snack.name} - ₹${snack.price}`;
   div.addEventListener('click', () => toggleSelect(snack, div));
-  comboGrid.appendChild(div);
+  comboGrid?.appendChild(div);
 });
 
 function toggleSelect(snack, element) {
@@ -144,7 +169,7 @@ function toggleSelect(snack, element) {
   comboBtn.disabled = selectedSnacks.length !== 3;
 }
 
-comboBtn.addEventListener('click', () => {
+comboBtn?.addEventListener('click', () => {
   const total = selectedSnacks.reduce((sum, s) => sum + s.price, 0);
   const discounted = Math.round(total * 0.85); // 15% off
   const comboName = selectedSnacks.map(s => s.name).join(', ');

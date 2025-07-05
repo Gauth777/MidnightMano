@@ -64,12 +64,20 @@
     <h2>Menu</h2>
     <div class="snack-grid">
       <!-- Sample Snack Card -->
-      <div class="snack-card">
-        <img src="maggie.png" alt="Maggie">
-        <h3>Maggie</h3>
-        <p>₹20</p>
-        <button onclick="addToCart('Maggie', 20)">Add to Cart</button>
+      <div class="snack-card" data-item="Maggie" data-price="20">
+      <img src="maggie.png" alt="Maggie">
+      <h3>Maggie</h3>
+      <p>₹20</p>
+
+      <div class="quantity-control">
+        <button class="qty-btn decrement">-</button>
+        <span class="qty-display">0</span>
+        <button class="qty-btn increment">+</button>
       </div>
+
+      <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+
       <div class="snack-card">
         <img src="chips.png" alt="Chips">
         <h3>Lays</h3>
