@@ -60,69 +60,10 @@
 
 
   <!-- Snacks Section -->
-  <section class="snack-menu" id= "menu">
-    <h2>Menu</h2>
-    <div class="snack-grid">
-      <!-- Sample Snack Card -->
-      <div class="snack-card" data-item="Maggie" data-price="20">
-      <img src="maggie.png" alt="Maggie">
-      <h3>Maggie</h3>
-      <p>₹20</p>
+  <div class="snack-grid" id="snackGrid">
+    <!-- Snacks will be inserted here dynamically -->
+  </div>
 
-      <div class="quantity-control">
-        <button class="qty-btn decrement">-</button>
-        <span class="qty-display">0</span>
-        <button class="qty-btn increment">+</button>
-      </div>
-
-      <button class="add-to-cart-btn">Add to Cart</button>
-      </div>
-
-      <div class="snack-card">
-        <img src="chips.png" alt="Chips">
-        <h3>Lays</h3>
-        <p>₹25</p>
-        <button onclick="addToCart('Chips', 25)">Add to Cart</button>
-      </div>
-      <div class="snack-card">
-        <img src="oreo.png" alt="oreo">
-        <h3>Oreo</h3>
-        <p>₹15</p>
-        <button onclick="addToCart('Oreo', 15)">Add to Cart</button>
-      </div>
-      <div class="snack-card">
-        <img src="jimjam.png" alt="jimjam">
-        <h3>JimJam</h3>
-        <p>₹15</p>
-        <button onclick="addToCart('JimJam', 15)">Add to Cart</button>
-      </div>
-      <div class="snack-card">
-        <img src="kurkure.png" alt="Kurkure">
-        <h3>Kurkure Masala Munch</h3>
-        <p>₹25</p>
-        <button onclick="addToCart('Kurkure Masala Munch', 25)">Add to Cart</button>
-      </div>
-      <div class="snack-card">
-        <img src="aloobhujia.png" alt="aloobhujia">
-        <h3>Aloo Bhujia</h3>
-        <p>₹100</p>
-        <button onclick="addToCart('Aloo Bhujia', 100)">Add to Cart</button>
-      </div>
-      <div class="snack-card">
-        <img src="bourbon.png" alt="bourbon">
-        <h3>Bourbon</h3>
-        <p>₹45</p>
-        <button onclick="addToCart('Bourbon', 45)">Add to Cart</button>
-      </div>
-      <div class="snack-card">
-        <img src="hideandseek.png" alt="hideandseek">
-        <h3>HideandSeek</h3>
-        <p>₹45</p>
-        <button onclick="addToCart('HideandSeek', 45)">Add to Cart</button>
-      </div>
-
-      <!-- Add more snacks here -->
-    </div>
 
     <div class="scroll-arrow" onclick="scrollSnacks()">
         →

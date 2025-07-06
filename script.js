@@ -180,3 +180,37 @@ comboBtn?.addEventListener('click', () => {
   selectedSnacks = [];
   comboBtn.disabled = true;
 });
+
+const snacks = [
+  { name: 'Maggie', price: 20, image: 'maggie.png' },
+  { name: 'Chips', price: 25, image: 'chips.png' },
+  { name: 'Oreo', price: 15, image: 'oreo.png' },
+  { name: 'JimJam', price: 15, image: 'jimjam.png' },
+  { name: 'Kurkure Masala Munch', price: 25, image: 'kurkure.png' },
+  { name: 'Aloo Bhujia', price: 100, image: 'aloobhujia.png' },
+  { name: 'Bourbon', price: 45, image: 'bourbon.png' },
+  { name: 'HideandSeek', price: 45, image: 'hideandseek.png' }
+];
+
+const snackGrid = document.getElementById('snackGrid');
+
+snacks.forEach(snack => {
+  const card = document.createElement('div');
+  card.className = 'snack-card';
+  card.setAttribute('data-item', snack.name);
+  card.setAttribute('data-price', snack.price);
+
+  card.innerHTML = `
+    <img src="${snack.image}" alt="${snack.name}">
+    <h3>${snack.name}</h3>
+    <p>₹${snack.price}</p>
+    <div class="quantity-control">
+      <button class="qty-btn decrement">-</button>
+      <span class="qty-display">0</span>
+      <button class="qty-btn increment">+</button>
+    </div>
+    <button class="add-to-cart-btn">Add to Cart</button>
+  `;
+
+  snackGrid.appendChild(card);
+});
